@@ -2,11 +2,12 @@ function demande_creation() {
     let question1 = prompt(
       "Voulez-vous avoir un découvert? (Répondre Oui en Y ou y, répondre non en n'importe quel caractère)"
     );
-  
+    let question2;
     if (question1.toLowerCase() === "y") {
-      let question2 = parseFloat(
+      question2 = parseFloat(
         prompt("Veuillez saisir le montant que vous voulez entre 100€ et 2000€")
       );
+      console.log("fn", question2);
   
       if (question2 >= 100 && question2 <= 2000) {
         alert("Vous avez demandé un découvert de " + question2 + "€");
@@ -16,9 +17,10 @@ function demande_creation() {
     } else {
       alert("Vous n'avez pas demandé de découvert.");
     }
+    return question2;
   }
   
-  demande_creation();
+  let question2 = demande_creation();
   
   function ouverture_compte() {
     let entrer_sold = prompt(
@@ -34,4 +36,5 @@ function demande_creation() {
     }
   }
   ouverture_compte();
+  console.log("out", question2);
   
