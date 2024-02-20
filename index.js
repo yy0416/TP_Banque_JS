@@ -1,7 +1,7 @@
 function demande_creation() {
     let question1 = prompt(
       "Voulez-vous avoir un découvert? (Répondre Oui en Y ou y, répondre non en n'importe quel caractère)"
-    );
+    ).trim();
     let question2;
     if (question1.toLowerCase() === "y") {
       question2 = parseFloat(
@@ -26,9 +26,10 @@ function demande_creation() {
     let entrer_sold = prompt(
       "Veuillez saisir le montant que vous souhaitez pour l'ouverture du nouveau compte."
     );
-    if (entrer_sold < 500) {
-      alert("Veuillez entrer un montant valide de 500€ ou plus.");
-    } else {
+    while (entrer_sold < 500) {
+      entrer_sold = prompt("Veuillez entrer un montant valide de 500€ ou plus.");
+    }
+    if (entrer_sold >= 500) {
       alert(
         "Vous avez ouvert un nouveau compte avec un solde de " + entrer_sold + "€"
       );
@@ -36,5 +37,4 @@ function demande_creation() {
     }
   }
   ouverture_compte();
-  console.log("out", question2);
   
