@@ -5,19 +5,19 @@ function demande_creation() {
   let question2;
   if (question1.toLowerCase() === "y") {
     question2 = parseFloat(
-      prompt("Veuillez saisir le montant que vous voulez entre 100€ et 2000€")
+      prompt("Veuillez saisir le montant decouvert que vous voulez entre 100€ et 2000€")
     );
     while (question2 < 100 || question2 > 2000) {
       question2 = parseFloat(
-        prompt("Veuillez rentrer un montant valide entre 100€ et 2000€")
+        prompt("Veuillez rentrer un montant  decouvert valide entre 100€ et 2000€")
       );
     }
 
     if (question2 >= 100 && question2 <= 2000) {
       alert("Vous avez demandé un découvert de " + question2 + "€");
     } else {
-      alert("Veuillez rentrer un montant valide entre 100€ et 2000€.");
-    }
+      alert("Veuillez rentrer un montant decouvert valide entre 100€ et 2000€.");
+    } 
   } else {
     alert("Vous n'avez pas demandé de découvert.");
   }
@@ -26,7 +26,7 @@ function demande_creation() {
 
 function ouverture_compte() {
   let entrer_sold = prompt(
-    "Veuillez saisir le montant que vous souhaitez pour l'ouverture du nouveau compte."
+    "Veuillez saisir le montant que vous souhaitez pour l'ouverture du nouveau compte.(min 500€)"
   );
   if (entrer_sold < 500) {
     entrer_sold = prompt("Veuillez entrer un montant valide de 500€ ou plus.");
