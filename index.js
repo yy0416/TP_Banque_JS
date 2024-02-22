@@ -82,3 +82,18 @@ function gererRetraits() {
 
 // Appeler la fonction pour démarrer la gestion des retraits
 gererRetraits();
+
+function calculerAgios(){
+  let montant_decouvert = demande_creation();
+
+  let date_decouvert = parseInt(prompt("Veuillez saisir le nombre de jour d'utilisation du découvert"));
+  if (date_decouvert>=0 && date_decouvert<=365){
+    let agios =  (montant_decouvert * date_decouvert*10/100)/365;
+  }else{
+    alert("Veuillez saissisez une période entre 0 et 365 jours");
+
+  }
+  return agios;
+
+}
+calculerAgios();
